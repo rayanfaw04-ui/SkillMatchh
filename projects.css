@@ -1,0 +1,224 @@
+:root {
+  --blue: #4d7cff;        /* لون أزرق نستخدموه في الأزرار والتدرجات */
+  --purple: #8a6cff;      /* لون بنفسجي أساسي للموقع */
+  --bg: #f5f7ff;          /* لون خلفية الصفحة */
+  --text: #1f2937;        /* لون النص الرئيسي */
+  --muted: #6b7280;       /* لون نص خفيف */
+  --radius: 25px;         /* درجة تدوير الحواف */
+  --primary: #8a6cff;     /* اللون الرئيسي */
+  --dark: #3a2f7a;        /* لون غامق للعناوين */
+}
+
+* {
+  box-sizing: border-box;        /* يخلي حساب الأحجام مضبوط */
+  font-family: "Cairo", sans-serif; /* الخط المستخدم في الموقع */
+}
+
+body {
+  margin: 0;                     /* نلغي الهوامش الافتراضية */
+  background: var(--bg);         /* نطبق لون الخلفية */
+  color: var(--text);            /* لون النص */
+}
+
+/* ================= NAVBAR ================= */
+.navbar-floating {
+  position: fixed;               /* البار ثابت فوق */
+  top: 30px;                     /* مسافة من أعلى الصفحة */
+  left: 50%;                     /* في منتصف الشاشة */
+  transform: translateX(-50%);   /* تصحيح التوسيط */
+  display: flex;                 /* العناصر جنب بعض */
+  justify-content: space-between;/* توزيع يمين ويسار */
+  align-items: center;           /* توسيط عمودي */
+  padding: 15px 50px;            /* مسافة داخلية */
+  background: #cdbbffde;         /* خلفية بنفسجية شفافة */
+  border-radius: var(--radius);  /* تدوير الحواف */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* ظل */
+  z-index: 1000;                 /* نخليه فوق كل العناصر */
+  width: 80%;                    /* عرض البار */
+  max-width: 1500px;             /* أقصى عرض */
+  height: 100px;                 /* ارتفاع البار */
+  transition: all 0.3s ease;     /* حركة ناعمة */
+  direction: rtl;                /* اتجاه عربي */
+}
+
+.nav-left {
+  display: flex;                 /* عناصر جنب بعض */
+  align-items: center;           /* توسيط */
+  gap: 12px;                     /* مسافة بينهم */
+}
+
+.nav-left img {
+  width: 55px;                   /* حجم اللوقو */
+}
+
+.site-name {
+  font-family: 'Lobster', cursive; /* خط اسم الموقع */
+  font-size: 30px;               /* حجم الخط */
+  font-weight: 400;              /* سماكة متوسطة */
+  letter-spacing: 1px;           /* تباعد الحروف */
+  color: var(--dark);            /* لون الاسم */
+}
+
+.nav-right {
+  display: flex;                 /* روابط جنب بعض */
+  align-items: center;           /* توسيط */
+  gap: 25px;                     /* مسافة بين الروابط */
+}
+
+.nav-right a {
+  text-decoration: none;         /* نلغي الخط تحت الرابط */
+  font-size: 20px;               /* حجم الخط */
+  color: var(--dark);            /* لون الرابط */
+  transition: 0.3s;              /* حركة ناعمة */
+  font-weight: bolder;           /* خط عريض */
+}
+
+.nav-right a:hover {
+  color: var(--primary);         /* يتغير اللون عند المرور */
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  width: 90%;                    /* عرض المحتوى */
+  max-width: 1200px;             /* أقصى عرض */
+  margin: auto;                  /* توسيط الصفحة */
+  padding: 40px 0;               /* مسافة فوق وتحت */
+}
+
+/* ================= PAGE HEADER ================= */
+.page-header {
+  text-align: center;            /* توسيط النص */
+  margin-bottom: 50px;           /* مسافة من تحت */
+  margin-top: 150px;             /* مسافة من فوق بسبب النافبار */
+}
+
+.page-header h1 {
+  font-size: 2.5rem;             /* حجم العنوان */
+  color: var(--purple);          /* لون العنوان */
+  margin-bottom: 10px;           /* مسافة */
+}
+
+.page-header p {
+  max-width: 700px;              /* أقصى عرض للنص */
+  margin: auto;                  /* توسيط */
+  color: var(--muted);           /* لون خفيف */
+  line-height: 1.8;              /* تباعد الأسطر */
+}
+
+/* ================= PROJECT CARD ================= */
+.project-card {
+  display: flex;                 /* صورة + معلومات جنب بعض */
+  gap: 25px;                     /* مسافة بينهم */
+  background: white;             /* خلفية بيضاء */
+  border-radius: var(--radius);  /* تدوير */
+  padding: 25px;                 /* مسافة داخلية */
+  margin-bottom: 25px;           /* مسافة بين الكروت */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.07); /* ظل */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* حركة */
+  align-items: center;           /* توسيط عمودي */
+}
+
+.project-card:hover {
+  transform: translateY(-6px);   /* يطلع لفوق */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12); /* ظل أقوى */
+}
+
+.project-image {
+  flex: 0 0 120px;               /* حجم ثابت للصورة */
+  height: 120px;
+  width: 120px;
+  border-radius: 14px;           /* تدوير الصورة */
+  overflow: hidden;              /* نخبي الزيادة */
+}
+
+.project-image img {
+  width: 100%;                   /* عرض كامل */
+  height: 100%;
+  object-fit: contain;           /* نخلي الصورة كاملة */
+}
+
+.project-info {
+  flex: 1;                       /* باقي المساحة للنص */
+}
+
+.project-info h3 {
+  margin: 0 0 8px;               /* مسافات */
+  font-size: 1.5rem;             /* حجم اسم المشروع */
+  color: var(--purple);          /* اللون */
+}
+
+.project-info p {
+  margin: 0 0 12px;              /* مسافة */
+  color: var(--muted);           /* لون خفيف */
+  line-height: 1.6;              /* تباعد الأسطر */
+}
+
+.stars {
+  color: #fbbf24;                /* لون النجوم */
+  font-size: 1.1rem;             /* حجم */
+  margin-bottom: 15px;           /* مسافة */
+}
+
+.details-btn {
+  display: inline-block;         /* زر */
+  padding: 10px 24px;            /* مسافة داخلية */
+  border-radius: 30px;           /* تدوير */
+  background: linear-gradient(135deg, var(--blue), var(--purple)); /* تدرج */
+  color: white;                  /* لون النص */
+  text-decoration: none;         /* نلغي الخط */
+  font-weight: 700;              /* عريض */
+  font-size: 0.95rem;            /* حجم */
+}
+
+/* ================= FLOATING ADD BUTTON ================= */
+.floating-add-btn {
+  position: fixed;               /* زر ثابت */
+  bottom: 25px;                  /* من تحت */
+  left: 25px;                    /* من اليسار */
+  background: linear-gradient(135deg, #c8a2c8, #8bbcff); /* تدرج */
+  color: rgb(71, 64, 64);        /* لون النص */
+  padding: 22px 22px;            /* مسافة */
+  border-radius: 30px;           /* تدوير */
+  font-weight: 800;              /* خط عريض */
+  text-decoration: none;         /* نلغي الخط */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* ظل */
+  z-index: 999;                  /* فوق العناصر */
+  transition: transform 0.3s ease; /* حركة */
+}
+
+.floating-add-btn:hover {
+  transform: translateY(-6px);   /* يطلع لفوق */
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .project-card { 
+    flex-direction: column;      /* نخلي العناصر تحت بعض */
+    text-align: center; 
+  }
+  .project-image { 
+    margin-bottom: 15px;         /* مسافة */
+  }
+  .navbar-floating { 
+    flex-direction: column; 
+    height: auto; 
+    padding: 15px 20px; 
+  }
+  .nav-right { 
+    flex-direction: column; 
+    gap: 10px; 
+  }
+}
+
+@media (max-width: 500px) {
+  .project-info h3 { font-size: 1.3rem; } /* تصغير العنوان */
+  .project-info p { font-size: 0.9rem; }  /* تصغير النص */
+  .details-btn { padding: 8px 18px; font-size: 0.85rem; }
+  .project-image { width: 100px; height: 100px; } /* تصغير الصورة */
+  .floating-add-btn { 
+    left: auto; 
+    right: 15px; 
+    bottom: 15px; 
+    padding: 18px; 
+  }
+}

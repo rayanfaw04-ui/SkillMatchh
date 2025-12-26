@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أضف ملفك | SkillMatch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="add-file (2).css">
+  <link rel="icon" type="image/png" href="icons8-business-48.png">
+
+</head>
+<body>
+
+    <!-- NAVBAR FLOATING -->
+    <header class="navbar-floating">
+        <div class="nav-left">
+            <img src="icons8-business-48.png" alt="SkillMatch Logo">
+            <span class="site-name">SkillMatch</span>
+        </div>
+        <div class="nav-right">
+            <a href="index.html">الرئيسية</a>
+            <a href="students (2).html">الطلاب</a>
+            <a href="projects.html">المشاريع</a>
+        </div>
+    </header>
+    
+<div class="container">
+  <h1>أضف ملفك الشخصي📁</h1>
+  <div class="success-msg" id="successMsg">تم إضافة الملف الشخصي بنجاح!</div>
+  <form id="addStudentForm">
+
+    <div>
+  <label for="photo">الصورة الشخصية *</label>
+  <input type="file" id="photo" name="photo" accept="image/*" required>
+  </div>
+
+
+    <div class="form-row">
+      <div>
+        <label for="name">الاسم الكامل *</label>
+        <input type="text" id="name" name="name" required placeholder="أدخل اسمك">
+      </div>
+      <div>
+        <label for="email">البريد الإلكتروني *</label>
+        <input type="email" id="email" name="email" required placeholder="example@mail.com">
+        <div class="error-msg" id="emailError">الرجاء إدخال بريد إلكتروني صالح يحتوي على @</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label for="phone">رقم الهاتف *</label>
+        <input type="tel" id="phone" name="phone" required placeholder="مثال: 0912345678" maxlength="10">
+        <div class="error-msg" id="phoneError">الرجاء إدخال رقم هاتف صحيح مكون من 10 أرقام</div>
+      </div>
+      <div>
+        <label for="age">العمر</label>
+        <input type="number" id="age" name="age" placeholder="اختياري">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label for="specialty">التخصص *</label>
+        <select id="specialty" name="specialty" required>
+         
+          <option>تطوير مواقع</option>
+          <option>تصميم UI/UX</option>
+          <option>تطبيقات موبايل</option>
+          <option>تحليل بيانات</option>
+          <option>ذكاء اصطناعي</option>
+          <option>أمن سيبراني</option>
+          <option>أخرى ..</option>
+        </select>
+      </div>
+      
+    </div>
+
+    <div>
+      <label for="university">الجامعة / المؤسسة التعليمية</label>
+      <input type="text" id="university" name="university" placeholder="اختياري">
+    </div>
+
+    <div>
+      <label for="description">نبذة عنك</label>
+      <textarea id="description" name="description" placeholder="اكتب عن خبراتك، مشاريعك، مهاراتك..."></textarea>
+    </div>
+
+    <div>
+      <label for="cv">تحميل السيرة الذاتية</label>
+      <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
+      
+    </div>
+
+    <button type="submit">إضافة الملف الشخصي</button>
+
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('addStudentForm');
+  const emailInput = document.getElementById('email');
+  const phoneInput = document.getElementById('phone');
+  const emailError = document.getElementById('emailError');
+  const phoneError = document.getElementById('phoneError');
+  const successMsg = document.getElementById('successMsg');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    let valid = true;
+
+    // التحقق من البريد
+    if (!emailInput.value.includes('@')) {
+      emailError.style.display = 'block';
+      valid = false;
+    } else {
+      emailError.style.display = 'none';
+    }
+
+    // التحقق من رقم الهاتف
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(phoneInput.value)) {
+      phoneError.style.display = 'block';
+      valid = false;
+    } else {
+      phoneError.style.display = 'none';
+    }
+
+    if (valid) {
+      successMsg.style.display = 'block';
+      setTimeout(() => successMsg.style.display = 'none', 3000);
+      form.reset();
+    }
+  });
+</script>
+
+</body>
+</html>

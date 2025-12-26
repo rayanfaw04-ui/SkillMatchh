@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>الطلاب | SkillMatch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="images/icons8-business-48.png">
+
+
+
+  <link rel="stylesheet" href="students (2).css">
+</head>
+<body>
+<!-- NAVBAR FLOATING -->
+    <header class="navbar-floating">
+        <div class="nav-left">
+            <img src="images/icons8-business-48.png" alt="SkillMatch Logo">
+            <span class="site-name">SkillMatch</span>
+        </div>
+        <div class="nav-right">
+            <a href="index.html">الرئيسية</a>
+            <a href="students (2).html">الطلاب</a>
+            <a href="projects.html">المشاريع</a>
+        </div>
+    </header>
+
+<!-- ===== Page Header ===== -->
+<section class="page-header">
+  <h1>الطلاب المسجلون </h1>
+  <p>
+    تصفح ملفات طلاب يمتلكون مهارات متنوعة في مجالات تقنية مختلفة.
+    يمكن لأصحاب المشاريع الاطلاع على مؤهلاتهم والتواصل معهم بسهولة.
+  </p>
+</section>
+
+<!-- ===== Filters ===== -->
+<section class="students-filters container">
+  <input type="text" id="searchInput" placeholder="ابحث باسم الطالب">
+  <select id="specialtyFilter">
+    <option value="">كل التخصصات</option>
+    <option value="تطوير واجهات ويب">تطوير مواقع</option>
+    <option value="تصميم UX/UI">تصميم UI/UX</option>
+    <option value="تطوير تطبيقات">تطبيقات موبايل</option>
+    <option value="تحليل بيانات">تحليل بيانات</option>
+    <option value="أمن سيبراني">أمن سيبراني</option>
+    <option>أخرى ..</option>
+  </select>
+</section>
+
+<!-- ===== Students Grid ===== -->
+<section class="container">
+  <div class="students-grid">
+
+    <!-- Student 1 -->
+    <div class="student-card" data-specialty="تطوير واجهات ويب">
+      <img src="images/sara.jpg" alt="student">
+      <div class="student-info">
+        <h3 class="student-name">سارة محمد</h3>
+        <span>تطوير واجهات ويب</span>
+        <div class="stars">★★★★★</div>
+        <a href="SaraProfile (2).html" class="profile-btn">عرض الملف المهاري</a>
+      </div>
+    </div>
+
+    <!-- Student 2 -->
+    <div class="student-card" data-specialty="نظم معلومات">
+      <img src="images/ahmad.jpg" alt="Student">
+      <div class="student-info">
+        <h3 class="student-name">أحمد علي</h3>
+        <span>نظم معلومات</span>
+        <div class="stars">★★★★☆</div>
+        <a href="AhmedProfile (2).html" class="profile-btn">عرض الملف المهاري</a>
+      </div>
+    </div>
+
+    <!-- Student 3 -->
+    <div class="student-card" data-specialty="تحليل بيانات">
+      <img src="images/reem.jpg" alt="Student">
+      <div class="student-info">
+        <h3 class="student-name">ريم خالد</h3>
+        <span>تحليل بيانات</span>
+        <div class="stars">★★★★★</div>
+        <a href="ReemProfile (2).html" class="profile-btn">عرض الملف المهاري</a>
+      </div>
+    </div>
+
+    <!-- Student 4 -->
+    <div class="student-card" data-specialty="أمن سيبراني">
+      <img src="images/mohamed.jpg" alt="Student">
+      <div class="student-info">
+        <h3 class="student-name">محمد سالم</h3>
+        <span>أمن سيبراني</span>
+        <div class="stars">★★★★☆</div>
+        <a href="MohamedProfile (2).html" class="profile-btn">عرض الملف المهاري</a>
+      </div>
+    </div>
+
+    <!-- Student 5 -->
+    <div class="student-card" data-specialty="تصميم UX/UI">
+      <img src="images/fida.jpg" alt="Student">
+      <div class="student-info">
+        <h3 class="student-name">فداء محمد</h3>
+        <span>تصميم UX/UI</span>
+        <div class="stars">★★★★★</div>
+        <a href="fidaprofile.html" class="profile-btn">عرض الملف المهاري</a>
+      </div>
+    </div>
+
+    <!-- Student 6 -->
+    <div class="student-card" data-specialty="تطوير تطبيقات">
+      <img src="images/yosef.jpg" alt="Student">
+      <div class="student-info">
+        <h3 class="student-name">يوسف عبدالسلام</h3>
+        <span>تطوير تطبيقات</span>
+        <div class="stars">★★★★☆</div>
+        <a href="YousefProfile (2).html" class="profile-btn">عرض الملف المهاري</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== Top Skills ===== -->
+<section class="top-skills container">
+  <h2>التخصصات الأكثر طلبًا</h2>
+  <div class="skills-list">
+     <span data-tooltip="تطوير مواقع: تصميم وبرمجة المواقع. فرص عمل متاحة في الشركات التقنية.">تطوير مواقع</span>
+    <span data-tooltip="UI / UX: تصميم واجهات المستخدم وتجربة المستخدم. فرص عمل وتصاميم للشركات.">UI / UX</span>
+    <span data-tooltip="تطبيقات موبايل: تطوير تطبيقات أندرويد وiOS.">تطبيقات موبايل</span>
+    <span data-tooltip="تحليل بيانات: تحليل البيانات واستخراج رؤى أعمال مهمة.">تحليل بيانات</span>
+    <span data-tooltip="ذكاء اصطناعي: تعلم الآلة والتعلم العميق. فرص عمل مميزة.">ذكاء اصطناعي</span>
+  </div>
+</section>
+
+<!-- ===== No Match ===== -->
+<section class="no-match container">
+  <h2>انطلق واصنع مستقبلك!</h2>
+  <p>أضف ملفك المهاري الآن وكن جزءًا من شبكة المهارات المتنوعة. اكتشف فرص جديدة وتواصل مع أصحاب المشاريع بسهولة.</p>
+</section>
+
+
+<!-- ===== Floating Add Button ===== -->
+<a href="add-file (2).html" class="floating-add-btn">
+  ➕ أضف ملفك
+</a>
+
+<!-- ===== JS ===== -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput");
+    const specialtyFilter = document.getElementById("specialtyFilter");
+    const studentCards = document.querySelectorAll(".student-card");
+
+    function filterStudents() {
+      const searchValue = searchInput.value.toLowerCase();
+      const specialtyValue = specialtyFilter.value;
+
+      studentCards.forEach(card => {
+        const name = card.querySelector(".student-name").textContent.toLowerCase();
+        const specialty = card.dataset.specialty;
+
+        const matchesName = name.includes(searchValue);
+        const matchesSpecialty = specialtyValue === "" || specialty === specialtyValue;
+
+       if (matchesName && matchesSpecialty) {
+  card.style.display = "block";
+  card.classList.remove("no-hover"); // يزيل أي كلاس يمنع hover
+} else {
+  card.style.display = "none";
+  card.classList.add("no-hover"); // يمنع hover
+}
+      });
+    }
+
+    searchInput.addEventListener("keyup", filterStudents);
+    specialtyFilter.addEventListener("change", filterStudents);
+  });
+</script>
+
+</body>
+</html>

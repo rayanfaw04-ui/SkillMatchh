@@ -1,0 +1,198 @@
+:root {
+    --primary: #7b6cff;        /* اللون الأساسي اللي نستخدموه في الموقع */
+    --secondary: #9fd3ff;      /* لون ثانوي مكمل للون الأساسي */
+    --lavender: #cdbbff;       /* لون فاتح ناعـم للخلفيات */
+    --dark: #2f2f5a;           /* لون غامق للنصوص */
+    --radius: 25px;            /* درجة تدوير الحواف */
+    --font: 'Cairo', sans-serif; /* الخط المستخدم في كامل الموقع */
+}
+
+* {
+    margin: 0;                 /* نلغي أي مسافات افتراضية */
+    padding: 0;                /* نلغي الحشو الافتراضي */
+    box-sizing: border-box;    /* نخلي الحسابات أدق في العرض */
+    font-family: var(--font); /* نطبق الخط على كل العناصر */
+}
+
+body {
+    background-color: #9d8ddd; /* لون خلفية الصفحة */
+    color: var(--dark);        /* لون النص */
+    padding-top: 160px;        /* مسافة من فوق بسبب النافبار الثابت */
+}
+
+/* ================= NAVBAR ================= */
+.navbar-floating {
+    position: fixed;           /* يخلي البار ثابت فوق */
+    top: 30px;                 /* يبعده شوية من فوق */
+    left: 50%;                 /* نخليه في النص */
+    transform: translateX(-50%); /* نضبطه في منتصف الشاشة */
+    display: flex;             /* نخلي العناصر جنب بعض */
+    justify-content: space-between; /* نوزع العناصر يمين ويسار */
+    align-items: center;       /* نوسّطهم عموديًا */
+    padding: 15px 50px;        /* مسافة داخلية */
+    background: #cdbbffde;     /* لون خلفية شفاف شوية */
+    border-radius: var(--radius); /* تدوير الحواف */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* ظل للبار */
+    z-index: 1000;             /* نخليه فوق كل العناصر */
+    width: 80%;                /* عرض البار */
+    max-width: 1500px;         /* أقصى عرض */
+    height: 100px;             /* ارتفاع البار */
+    transition: all 0.3s ease; /* حركة ناعمة */
+    direction: rtl;            /* اتجاه الكتابة من اليمين لليسار */
+}
+
+.nav-left {
+    display: flex;             /* العناصر جنب بعض */
+    align-items: center;       /* توسيط عمودي */
+    gap: 12px;                 /* مسافة بين العناصر */
+}
+
+.nav-left img {
+    width: 55px;               /* حجم اللوقو */
+}
+
+.site-name {
+    font-family: 'Lobster', cursive; /* خط اسم الموقع */
+    font-size: 30px;           /* حجم الخط */
+    font-weight: 400;          /* سماكة الخط */
+    letter-spacing: 1px;       /* مسافة بين الحروف */
+    color: var(--dark);        /* لون النص */
+}
+
+.nav-right {
+    display: flex;             /* الروابط جنب بعض */
+    align-items: center;       /* توسيط عمودي */
+    gap: 25px;                 /* مسافة بين الروابط */
+}
+
+.nav-right a {
+    text-decoration: none;     /* نلغي الخط تحت الرابط */
+    font-size: 20px;           /* حجم الخط */
+    color: var(--dark);        /* لون الرابط */
+    transition: 0.3s;          /* حركة ناعمة */
+    font-weight: bolder;       /* خط عريض */
+}
+
+.nav-right a:hover {
+    color: var(--primary);     /* يتغير اللون عند المرور */
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    width: 85%;                /* عرض المحتوى */
+    max-width: 1100px;         /* أقصى عرض */
+    margin: auto;              /* توسيط الصفحة */
+}
+
+/* ================= PROJECT DETAILS ================= */
+.project-details {
+    background: white;         /* خلفية بيضاء */
+    padding: 55px;             /* مسافة داخلية */
+    border-radius: var(--radius); /* تدوير الحواف */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12); /* ظل */
+}
+
+/* ================= HEADER ================= */
+.company-header {
+    text-align: center;        /* توسيط النص */
+    margin-bottom: 50px;       /* مسافة من تحت */
+}
+
+.company-header img {
+    width: 180px;              /* حجم الصورة */
+    border-radius: 20px;       /* تدوير الصورة */
+    margin-bottom: 25px;       /* مسافة من تحت */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25); /* ظل للصورة */
+}
+
+.company-header h1 {
+    font-size: 40px;           /* حجم العنوان */
+    color: var(--primary);     /* لون العنوان */
+}
+
+/* ================= SECTIONS ================= */
+.detail-section {
+    margin-bottom: 40px;       /* مسافة بين الأقسام */
+}
+
+.detail-section h2 {
+    font-size: 28px;           /* حجم العنوان الفرعي */
+    margin-bottom: 15px;       /* مسافة من تحت */
+}
+
+.detail-section p {
+    font-size: 22px;           /* حجم النص */
+    line-height: 1.9;          /* تباعد الأسطر */
+}
+
+/* ================= SKILLS ================= */
+.skills-list {
+    display: flex;             /* المهارات جنب بعض */
+    flex-wrap: wrap;           /* ينزلوا لسطر جديد لو ما فيش مساحة */
+    gap: 15px;                 /* مسافة بين المهارات */
+}
+
+.skill {
+    background: linear-gradient(135deg, var(--lavender), var(--secondary)); /* تدرج لوني */
+    padding: 10px 22px;        /* مسافة داخلية */
+    border-radius: 30px;       /* تدوير */
+    font-size: 18px;           /* حجم الخط */
+    font-weight: 700;          /* خط عريض */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* ظل */
+}
+
+/* ================= INFO GRID ================= */
+.detail-grid {
+    display: grid;             /* نظام Grid */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* أعمدة مرنة */
+    gap: 25px;                 /* مسافة بين الصناديق */
+    margin-top: 40px;          /* مسافة من فوق */
+}
+
+.mini-box {
+    background: linear-gradient(135deg, var(--lavender), var(--secondary)); /* تدرج لوني */
+    padding: 30px;             /* مسافة داخلية */
+    border-radius: var(--radius); /* تدوير */
+    text-align: center;        /* توسيط النص */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* ظل */
+}
+
+.mini-box h3 {
+    font-size: 22px;           /* حجم العنوان */
+    margin-bottom: 10px;       /* مسافة من تحت */
+}
+
+.mini-box p {
+    font-size: 20px;           /* حجم النص */
+    font-weight: 700;          /* خط عريض */
+}
+
+/* ================= EMAIL ================= */
+.contact-email {
+    margin-top: 55px;          /* مسافة من فوق */
+    text-align: center;        /* توسيط */
+}
+
+.contact-email a {
+    background: var(--primary); /* لون الزر */
+    color: white;              /* لون النص */
+    padding: 16px 40px;        /* مسافة داخلية */
+    border-radius: 35px;       /* تدوير */
+    font-size: 20px;           /* حجم الخط */
+    font-weight: 800;          /* سماكة */
+    text-decoration: none;     /* نلغي الخط */
+    box-shadow: 0 12px 25px rgba(123,108,255,0.45); /* ظل */
+    transition: 0.3s;          /* حركة ناعمة */
+}
+
+.contact-email a:hover {
+    transform: translateY(-4px); /* يطلع لفوق شوية */
+    box-shadow: 0 18px 35px rgba(123,108,255,0.6); /* ظل أقوى */
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .project-details { padding: 35px 25px; } /* تصغير المسافات */
+    .company-header h1 { font-size: 32px; }  /* تصغير العنوان */
+    .detail-section p { font-size: 18px; }   /* تصغير النص */
+}

@@ -1,0 +1,149 @@
+:root {
+  --blue: #4d7cff;        /* لون أزرق نستخدموه في الأزرار */
+  --purple: #8a6cff;      /* لون بنفسجي للعناوين */
+  --bg: #f5f7ff;          /* لون خلفية الصفحة */
+  --text: #1f2937;        /* لون النص الرئيسي */
+  --muted: #6b7280;       /* لون نص خفيف */
+  --radius: 25px;         /* تدوير الحواف */
+}
+
+* { 
+  box-sizing: border-box; /* نخلي كل الحسابات محسوبة */
+  font-family: "Cairo", sans-serif; /* الخط المستخدم في كل الصفحة */
+}
+
+body {
+  margin: 0;                     /* نلغي الهوامش */
+  background: var(--bg);         /* لون الخلفية الافتراضي */
+  color: var(--text);            /* لون النص */
+  background-color: #9d8ddd;     /* خلفية بديلة */
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  width: 90%;                     /* عرض المحتوى */
+  max-width: 1000px;              /* أقصى عرض */
+  margin: auto;                   /* توسيط الصفحة */
+  padding: 40px 0;                /* مسافة فوق وتحت */
+}
+
+/* ================= PROFILE HEADER ================= */
+.profile-header {
+  display: flex;                  /* عناصر جنب بعض */
+  gap: 30px;                      /* مسافة بينهم */
+  background: white;              /* خلفية بيضاء */
+  border-radius: var(--radius);   /* تدوير الحواف */
+  padding: 30px;                  /* مسافة داخلية */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06); /* ظل خفيف */
+  flex-wrap: wrap;                /* نخليها تلتف لو ضاقت الشاشة */
+  align-items: center;            /* توسيط عمودي */
+  justify-content: center;        /* توسيط أفقي */
+  margin-bottom: 30px;            /* مسافة من تحت */
+  transition: transform 0.3s ease; /* حركة ناعمة */
+}
+
+.profile-header:hover {
+  transform: translateY(-4px);    /* يطلع شوي عند المرور */
+}
+
+/* ================= PROFILE PHOTO ================= */
+.profile-photo {
+  flex: 0 0 200px;               /* حجم ثابت للصورة */
+  height: 200px;
+  border-radius: 50%;            /* صورة دائرية */
+  overflow: hidden;              /* نخفي الزيادة */
+}
+
+.profile-photo img {
+  width: 100%;                   /* عرض كامل */
+  height: 100%;                  /* ارتفاع كامل */
+  object-fit: cover;             /* نخلي الصورة تملا الدائرة */
+}
+
+/* ================= PROFILE INFO ================= */
+.profile-info {
+  flex: 1;                        /* باقي المساحة للنص */
+  min-width: 250px;               /* أقل عرض */
+}
+
+.profile-info h2 {
+  margin: 0 0 10px;               /* مسافات */
+  color: var(--purple);           /* لون العنوان */
+  font-size: 1.8rem;              /* حجم العنوان */
+}
+
+.profile-info span {
+  display: inline-block;          /* عرض داخلي */
+  margin-bottom: 10px;            /* مسافة */
+  color: var(--muted);            /* لون النص الخفيف */
+  font-size: 1rem;                /* حجم النص */
+}
+
+.stars {
+  color: #fbbf24;                 /* لون النجوم */
+  margin-bottom: 12px;            /* مسافة */
+  font-size: 1.2rem;              /* حجم */
+}
+
+.profile-info p {
+  line-height: 1.6;               /* تباعد الأسطر */
+  color: var(--text);             /* لون النص */
+}
+
+/* ================= ABOUT SECTION ================= */
+.about-section {
+  background: white;              /* خلفية بيضاء */
+  padding: 30px;                  /* مسافة داخلية */
+  border-radius: var(--radius);   /* تدوير الحواف */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06); /* ظل */
+}
+
+.about-section h3 {
+  margin-top: 0;                  /* نلغي المسافة فوق */
+  color: var(--purple);           /* لون العنوان */
+}
+
+.about-section p {
+  line-height: 1.6;               /* تباعد الأسطر */
+  color: var(--text);             /* لون النص */
+}
+
+/* ================= CV BUTTON ================= */
+.cv-btn {
+  margin-top: 20px;               /* مسافة من فوق */
+  display: inline-block;          /* زر */
+  padding: 12px 25px;             /* مسافة داخلية */
+  border-radius: 30px;            /* تدوير الحواف */
+  background: linear-gradient(135deg, #8a6cff, #4d7cff); /* تدرج ألوان */
+  color: white;                   /* لون النص */
+  text-decoration: none;          /* نلغي الخط */
+  font-weight: 700;               /* خط عريض */
+}
+
+/* ================= RESPONSIVE MEDIA QUERY ================= */
+@media (max-width: 500px) {       /* لو الشاشة صغيرة */
+  .container {
+    padding: 20px 10px;           /* نقلص البادينج */
+  }
+
+  .profile-info h2 {
+    font-size: 1.5rem;            /* تصغير العنوان */
+  }
+
+  .profile-info span {
+    font-size: 0.9rem;            /* تصغير النص */
+  }
+
+  .stars {
+    font-size: 1rem;              /* تصغير النجوم */
+  }
+
+  .about-section {
+    padding: 20px;                /* تقليل المسافة داخل العنصر */
+  }
+
+  .cv-btn {
+    padding: 10px 20px;           /* تصغير الزر */
+    font-size: 0.95rem;           /* تصغير حجم الخط */
+  }
+}

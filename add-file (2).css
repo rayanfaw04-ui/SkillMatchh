@@ -1,0 +1,254 @@
+:root {
+      --blue: #4d7cff;          /* اللون الأزرق الأساسي */
+      --purple: #8a6cff;        /* اللون البنفسجي */
+      --green: #28a745;         /* اللون الأخضر */
+      --red: #dc3545;           /* اللون الأحمر */
+      --bg: #f5f7ff;            /* خلفية الصفحة */
+      --text: #1f2937;          /* لون النص العام */
+      --muted: #6b7280;         /* لون نص خافت */
+      --primary: #7b6cff;       /* اللون الرئيسي المستخدم في hover وروابط */
+      --dark: #3a2f7a;          /* لون داكن للنصوص */
+      --radius: 25px;           /* نصف قطر الحواف */
+}
+
+* {
+  box-sizing: border-box;       /* احتساب الحجوم مع padding وborder */
+  font-family: "Cairo", sans-serif;  /* الخط الافتراضي لكل العناصر */
+}
+
+body {
+  margin: 0;                    /* إزالة الهوامش الافتراضية */
+  background: var(--bg);        /* تعيين خلفية الجسم */
+  color: var(--text);           /* لون النص */
+}
+
+/* NAVBAR */
+.navbar-floating {
+    position: fixed;            /* navbar ثابت */
+    top: 30px;                  /* مسافة من الأعلى */
+    left: 50%;                  /* توسيط navbar */
+    transform: translateX(-50%);/* تعديل التوسيط بدقة */
+    display: flex;              /* ترتيب العناصر أفقي */
+    justify-content: space-between; /* توزيع العناصر بالتساوي */
+    align-items: center;        /* توسيط عمودي */
+    padding: 15px 50px;         /* padding داخلي */
+    background:  #cdbbffde;     /* خلفية شفافة */
+    border-radius: var(--radius); /* تدوير الحواف */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* ظل خفيف */
+    z-index: 1000;              /* فوق باقي العناصر */
+    width: 80%;                 /* عرض navbar */
+    max-width: 1500px;          /* أقصى عرض */
+    height: 100px;              /* ارتفاع */
+    transition: all 0.3s ease;  /* حركة سلسة */
+    direction: rtl;             /* ترتيب من اليمين لليسار */
+}
+
+.nav-left {
+    display: flex;              /* ترتيب العناصر أفقي */
+    align-items: center;        /* توسيط عمودي */
+    gap: 12px;                  /* مسافة بين العناصر */
+}
+
+.nav-left img {
+    width: 55px;                /* حجم صورة اللوجو */
+}
+
+.site-name {
+    font-family: 'Lobster', cursive; /* خط اسم الموقع */
+    font-size: 30px;            /* حجم الخط */
+    font-weight: 400;           /* سمك الخط */
+    letter-spacing: 1px;        /* مسافة بين الحروف */
+    color: var(--dark);         /* لون النص */
+}
+
+.nav-right {
+    display: flex;              /* ترتيب العناصر أفقي */
+    align-items: center;        /* توسيط عمودي */
+    gap: 25px;                  /* مسافة بينهم */
+}
+
+.nav-right a {
+    text-decoration: none;      /* إزالة الخط تحت الرابط */
+    font-size: 20px;            /* حجم الخط */
+    color: var(--dark);         /* لون الرابط */
+    transition: 0.3s;           /* تأثير سلس */
+    font-weight: bolder;        /* سمك الخط */
+}
+
+.nav-right a:hover {
+    color: var(--primary);      /* تغيير اللون عند hover */
+}
+
+/* CONTAINER */
+.container {
+      width: 90%;               /* عرض الحاوية */
+      max-width: 700px;         /* أقصى عرض */
+      margin: 50px auto;        /* مسافة من فوق وتوسيط */
+      background: white;        /* خلفية بيضاء */
+      padding: 40px 30px;       /* padding داخلي */
+      border-radius: var(--radius); /* تدوير الحواف */
+      box-shadow: 0 12px 25px rgba(0,0,0,0.12); /* ظل خفيف */
+      position: relative;       /* وضع نسبي لتأثير ::before */
+      overflow: hidden;         /* إخفاء أي شيء خارج الحاوية */
+      margin-top: 150px;        /* مسافة من الأعلى */
+}
+
+/* Animated gradient background */
+.container::before {
+      content: "";              /* عنصر افتراضي */
+      position: absolute;       /* وضع مطلق */
+      top: -50%;                /* موقع من الأعلى */
+      left: -50%;               /* موقع من اليسار */
+      width: 200%;              /* عرض العنصر */
+      height: 200%;             /* ارتفاع العنصر */
+      background: linear-gradient(45deg, var(--blue), var(--purple), var(--green)); /* خلفية متدرجة */
+      background-size: 400% 400%; /* تكبير الخلفية للتحريك */
+      animation: gradientMove 15s ease infinite; /* تحريك متكرر */
+      z-index: -1;              /* خلف المحتوى */
+      filter: blur(60px);       /* تمويه */
+}
+
+/* حركة الخلفية المتدرجة */
+@keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+}
+
+h1 {
+      text-align: center;       /* توسيط العنوان */
+      color: var(--purple);     /* لون بنفسجي */
+      margin-bottom: 30px;      /* مسافة تحت العنوان */
+      font-size: 2.2rem;        /* حجم الخط */
+}
+
+form {
+      display: flex;            /* ترتيب العناصر عمودياً */
+      flex-direction: column;   /* عمودي */
+      gap: 20px;                /* مسافة بين الحقول */
+}
+
+label {
+      font-weight: 600;         /* سمك الخط */
+      margin-bottom: 6px;       /* مسافة تحت */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="file"],
+select,
+textarea {
+      padding: 12px 15px;       /* padding داخلي */
+      border-radius: 12px;      /* تدوير الحواف */
+      border: 1px solid #ddd;   /* الحدود */
+      font-size: 1rem;          /* حجم الخط */
+      width: 100%;              /* عرض كامل */
+      transition: all 0.3s ease; /* حركة سلسة */
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+      border-color: var(--blue); /* لون الحدود عند التركيز */
+      box-shadow: 0 0 8px rgba(77,124,255,0.4); /* ظل عند التركيز */
+      outline: none;            /* إزالة الخط الخارجي */
+}
+
+.form-row {
+      display: flex;            /* ترتيب عناصر الصف أفقي */
+      gap: 15px;                /* مسافة بينهم */
+      flex-wrap: wrap;          /* يلتف لو ضاق المكان */
+}
+
+.form-row > div { 
+      flex: 1;                  /* ياخذ مساحة متساوية */
+      min-width: 150px;         /* الحد الأدنى للعرض */
+}
+
+button {
+      padding: 14px;            /* padding داخلي */
+      border: none;             /* إزالة الحدود */
+      border-radius: 30px;      /* تدوير الحواف */
+      background: linear-gradient(135deg, var(--blue), var(--purple)); /* خلفية متدرجة */
+      color: white;             /* لون النص */
+      font-size: 1.1rem;        /* حجم الخط */
+      font-weight: 700;         /* سمك الخط */
+      cursor: pointer;          /* شكل المؤشر */
+      transition: all 0.3s ease; /* حركة سلسة */
+}
+
+button:hover {
+      transform: translateY(-3px) scale(1.02); /* رفع وتكبير بسيط */
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2); /* ظل عند hover */
+}
+
+.error-msg {
+      color: var(--red);        /* لون الخطأ */
+      font-size: 0.85rem;       /* حجم الخط */
+      display: none;            /* مخفي افتراضياً */
+      margin-top: -8px;         /* مسافة فوق */
+}
+
+.success-msg {
+      color: var(--green);      /* لون النجاح */
+      font-size: 0.95rem;       /* حجم الخط */
+      text-align: center;       /* توسيط النص */
+      display: none;            /* مخفي افتراضياً */
+      margin-bottom: 10px;      /* مسافة تحت */
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 900px){
+  .container {
+    padding: 30px 20px;         /* تقليل padding */
+    margin-top: 120px;          /* تقليل المسافة من فوق */
+  }
+
+  h1 {
+    font-size: 1.9rem;          /* تصغير العنوان */
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="file"],
+  select,
+  textarea {
+    font-size: 0.95rem;         /* تصغير حجم الخط */
+    padding: 10px 12px;         /* تقليل padding */
+  }
+
+  button {
+    font-size: 1rem;            /* تصغير حجم النص في الزر */
+    padding: 12px;              /* تقليل padding */
+  }
+
+  .form-row {
+    gap: 10px;                  /* تقليل المسافة بين الحقول */
+  }
+}
+
+@media(max-width: 600px){
+  .navbar-floating {
+    flex-direction: column;     /* navbar عمودي */
+    gap: 10px;                  /* مسافة بين العناصر */
+    padding: 15px 20px;         /* padding أصغر */
+    width: 90%;                 /* عرض أصغر */
+  }
+
+  .nav-right {
+    justify-content: center;    /* توسيط الروابط */
+    gap: 15px;                  /* مسافة بينهم */
+  }
+
+  h1 {
+    font-size: 1.6rem;          /* تصغير العنوان */
+  }
+
+  .form-row > div {
+    min-width: 100%;            /* كل عنصر ياخذ عرض كامل */
+  }
+}

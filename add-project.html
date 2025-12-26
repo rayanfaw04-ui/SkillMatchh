@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إضافة مشروع | SkillMatch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="add-project.css">
+  <link rel="icon" type="image/png" href="icons8-business-48.png">
+
+</head>
+<body>
+
+<!-- NAVBAR FLOATING -->
+<header class="navbar-floating">
+  <div class="nav-left">
+    <img src="icons8-business-48.png">
+    <span class="site-name">SkillMatch</span>
+  </div>
+  <div class="nav-right">
+    <a href="index.html">الرئيسية</a>
+    <a href="students (2).html">الطلاب</a>
+    <a href="projects.html">المشاريع</a>
+  </div>
+</header>
+
+<div class="container">
+  <h1>أضف مشروعك 🚀</h1>
+  <p class="subtitle">انشر مشروعك وابحث عن فريقك المثالي بسهولة</p>
+
+  <div class="success-msg" id="successMsg">تم إضافة المشروع بنجاح!</div>
+
+  <form id="addProjectForm">
+
+    <div>
+      <label>اسم الشركة / المشروع *</label>
+      <input type="text" required placeholder="مثال: شركة المدار / منصة تعليم إلكتروني">
+    </div>
+
+      <div>
+      <label>البريد الالكتروني*</label>
+      <input type="url" placeholder=" للتواصل معك.." required>
+    </div>
+
+    <div class="form-row">
+
+      <div>
+        <label>مدة المشروع</label>
+        <input type="text" placeholder="مثال: 3 أشهر">
+      </div>
+    </div>
+
+    <div>
+      <label>وصف المشروع *</label>
+      <textarea required placeholder="اشرح فكرة المشروع، أهدافه، وما الذي تبحث عنه..."></textarea>
+    </div>
+
+    <div>
+      <label>المهارات المطلوبة *</label>
+      <input type="text" required placeholder="مثال: Frontend, Backend, UI/UX">
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label>عدد أعضاء الفريق</label>
+        <input type="number" min="1" placeholder="مثال: 4">
+      </div>
+      
+    </div>
+
+   
+
+    <button type="submit">نشر المشروع</button>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById("addProjectForm");
+  const successMsg = document.getElementById("successMsg");
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    successMsg.style.display = "block";
+    setTimeout(() => successMsg.style.display = "none", 3000);
+    form.reset();
+  });
+</script>
+
+</body>
+</html>

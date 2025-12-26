@@ -1,0 +1,291 @@
+:root {
+  --dark: #3a2f7a;        /* لون غامق نستخدموه للنصوص */
+  --blue: #4d7cff;        /* لون أزرق */
+  --purple: #8a6cff;      /* لون بنفسجي أساسي */
+  --bg: #f5f7ff;          /* لون خلفية الموقع */
+  --text: #1f2937;        /* لون النص الأساسي */
+  --muted: #6b7280;       /* لون نص خفيف */
+  --primary: #8a6cff;     /* اللون الرئيسي */
+  --radius: 25px;         /* تدوير الحواف */
+}
+
+* {
+  box-sizing: border-box;        /* يخلي حساب الأحجام مضبوط */
+  font-family: "Cairo", sans-serif; /* خط الموقع */
+}
+
+body {
+  margin: 0;                     /* نلغي الهوامش */
+  background: var(--bg);         /* نطبق لون الخلفية */
+  color: var(--text);            /* لون النص */
+}
+
+/* ================= NAVBAR ================= */
+.navbar-floating {
+  position: fixed;               /* البار ثابت */
+  top: 30px;                     /* مسافة من فوق */
+  left: 50%;                     /* في منتصف الشاشة */
+  transform: translateX(-50%);   /* تصحيح التوسيط */
+  display: flex;                 /* العناصر جنب بعض */
+  justify-content: space-between;/* توزيع يمين ويسار */
+  align-items: center;           /* توسيط عمودي */
+  padding: 15px 50px;            /* مسافة داخلية */
+  background: #cdbbffde;         /* خلفية شفافة */
+  border-radius: var(--radius);  /* تدوير */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* ظل */
+  z-index: 1000;                 /* فوق كل العناصر */
+  width: 80%;                    /* عرض البار */
+  max-width: 1500px;             /* أقصى عرض */
+  height: 100px;                 /* ارتفاع */
+  transition: all 0.3s ease;     /* حركة ناعمة */
+  direction: rtl;                /* اتجاه عربي */
+}
+
+.nav-left {
+  display: flex;                 /* عناصر جنب بعض */
+  align-items: center;           /* توسيط */
+  gap: 12px;                     /* مسافة */
+}
+
+.nav-left img {
+  width: 55px;                   /* حجم اللوقو */
+}
+
+.site-name {
+  font-family: 'Lobster', cursive; /* خط اسم الموقع */
+  font-size: 30px;               /* حجم الخط */
+  font-weight: 400;              /* سماكة */
+  letter-spacing: 1px;           /* تباعد الحروف */
+  color: var(--dark);            /* لون النص */
+}
+
+.nav-right {
+  display: flex;                 /* الروابط جنب بعض */
+  align-items: center;           /* توسيط */
+  gap: 25px;                     /* مسافة */
+}
+
+.nav-right a {
+  text-decoration: none;         /* نلغي الخط */
+  font-size: 20px;               /* حجم الخط */
+  color: var(--dark);            /* لون الرابط */
+  transition: 0.3s;              /* حركة */
+  font-weight: bolder;           /* خط عريض */
+}
+
+.nav-right a:hover {
+  color: var(--primary);         /* يتغير اللون عند المرور */
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  width: 90%;                    /* عرض المحتوى */
+  max-width: 1200px;             /* أقصى عرض */
+  margin: auto;                  /* توسيط */
+}
+
+/* ================= FILTERS ================= */
+.students-filters {
+  display: flex;                 /* العناصر جنب بعض */
+  gap: 15px;                     /* مسافة */
+  margin: 40px auto;             /* مسافة فوق وتحت */
+  flex-wrap: wrap;               /* ينزلوا لسطر ثاني */
+}
+
+.students-filters input,
+.students-filters select {
+  flex: 1;                       /* كل عنصر ياخذ نفس المساحة */
+  padding: 14px;                 /* مسافة داخلية */
+  border-radius: 12px;           /* تدوير */
+  border: 3px solid #611c50;     /* إطار */
+  font-family: "Cairo", sans-serif; /* الخط */
+  font-size: 1rem;               /* حجم الخط */
+  background-color: #c4bddb;     /* لون الخلفية */
+  outline: none;                 /* نلغي الإطار الأزرق */
+}
+
+/* ================= PAGE HEADER ================= */
+.page-header {
+  text-align: center;            /* توسيط النص */
+  padding: 60px 20px 30px;       /* مسافات */
+  margin-top: 100px;             /* مسافة من فوق */
+}
+
+.page-header h1 {
+  font-size: 2.5rem;             /* حجم العنوان */
+  color: var(--purple);          /* لون العنوان */
+  margin-bottom: 10px;           /* مسافة */
+}
+
+.page-header p {
+  max-width: 650px;              /* أقصى عرض */
+  margin: auto;                  /* توسيط */
+  color: var(--muted);           /* لون خفيف */
+  line-height: 1.7;              /* تباعد الأسطر */
+}
+
+/* ================= STUDENTS GRID ================= */
+.students-grid {
+  display: grid;                 /* Grid */
+  grid-template-columns: repeat(auto-fill, 260px); /* عرض ثابت للكارد */
+  justify-content: start;         /* يبدأ من البداية */
+  gap: 25px;                     /* مسافة */
+  margin-bottom: 80px;           /* مسافة من تحت */
+  margin-right: 40px;            /* مسافة من اليمين */
+}
+
+.student-card {
+  background: white;             /* خلفية بيضاء */
+  border-radius: var(--radius);  /* تدوير */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06); /* ظل */
+  overflow: hidden;              /* نخبي الزيادة */
+  transition: transform 0.3s ease; /* حركة */
+}
+
+.student-card:hover {
+  transform: translateY(-6px);   /* يطلع لفوق */
+  box-shadow: 0 25px 20px rgba(65, 51, 119, 0.3); /* ظل أقوى */
+}
+
+.student-card img {
+  width: 100%;                   /* عرض كامل */
+  height: 200px;                 /* ارتفاع */
+  object-fit: cover;             /* قص الصورة */
+}
+
+.student-info {
+  padding: 18px;                 /* مسافة داخلية */
+  text-align: center;            /* توسيط */
+}
+
+.student-info h3 {
+  margin: 0;                     /* نلغي الهوامش */
+  font-size: 1.2rem;             /* حجم الاسم */
+  color: var(--purple);          /* اللون */
+}
+
+.student-info span {
+  display: block;                /* كل واحد في سطر */
+  margin: 6px 0 10px;            /* مسافة */
+  color: var(--muted);           /* لون خفيف */
+  font-size: 0.95rem;            /* حجم */
+}
+
+.stars {
+  color: #fbbf24;                /* لون النجوم */
+  margin-bottom: 14px;           /* مسافة */
+  font-size: 1.1rem;             /* حجم */
+}
+
+.profile-btn {
+  display: inline-block;         /* زر */
+  padding: 10px 22px;            /* مسافة */
+  border-radius: 30px;           /* تدوير */
+  background: linear-gradient(135deg, var(--blue), var(--purple)); /* تدرج */
+  color: white;                  /* لون النص */
+  text-decoration: none;         /* نلغي الخط */
+  font-weight: 700;              /* عريض */
+  font-size: 0.95rem;            /* حجم */
+}
+
+/* ================= TOP SKILLS ================= */
+.top-skills {
+  margin: 60px auto;             /* مسافة */
+  text-align: center;            /* توسيط */
+}
+
+.skills-list {
+  display: flex;                 /* جنب بعض */
+  justify-content: center;       /* توسيط */
+  flex-wrap: wrap;               /* سطر جديد */
+  gap: 15px;                     /* مسافة */
+}
+
+.skills-list span {
+  padding: 10px 20px;            /* مسافة */
+  background: linear-gradient(135deg, #b3d9ff, #c8a2c8); /* تدرج */
+  color: white;                  /* لون النص */
+  border-radius: 25px;           /* تدوير */
+  font-weight: 700;              /* عريض */
+}
+
+/* ================= TOOLTIP ================= */
+.skills-list span {
+  position: relative;            /* ضروري للتولتيب */
+  cursor: pointer;               /* يد */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-list span:hover {
+  transform: translateY(-6px);   /* حركة */
+  box-shadow: 0 8px 20px rgba(138, 108, 255, 0.4); /* ظل */
+}
+
+.skills-list span::after {
+  content: attr(data-tooltip);   /* نص التولتيب */
+  position: absolute;            /* تموضع */
+  bottom: 120%;                  /* فوق العنصر */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(138, 108, 255, 0.95); /* لون */
+  color: #fff;                   /* نص أبيض */
+  padding: 8px 14px;             /* مسافة */
+  border-radius: 10px;           /* تدوير */
+  font-size: 0.9rem;             /* حجم */
+  white-space: nowrap;           /* سطر واحد */
+  opacity: 0;                    /* مخفي */
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.skills-list span::before {
+  content: '';                   /* السهم */
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(138, 108, 255, 0.95) transparent transparent transparent;
+  opacity: 0;
+}
+
+.skills-list span:hover::after,
+.skills-list span:hover::before {
+  opacity: 1;                    /* يظهر التولتيب */
+}
+
+/* ================= FLOATING BUTTON ================= */
+.floating-add-btn {
+  position: fixed;               /* زر ثابت */
+  bottom: 25px;                  /* من تحت */
+  left: 25px;                    /* من اليسار */
+  background: linear-gradient(135deg, #c8a2c8, #8bbcff); /* تدرج */
+  color: rgb(71, 64, 64);        /* لون النص */
+  padding: 22px 22px;            /* مسافة */
+  border-radius: 30px;           /* تدوير */
+  font-weight: 800;              /* عريض */
+  text-decoration: none;         /* نلغي الخط */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* ظل */
+  z-index: 999;                  /* فوق */
+}
+
+.floating-add-btn:hover {
+  transform: translateY(-6px);   /* حركة */
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width: 900px){
+  .students-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    justify-content: center;
+  }
+}
+
+@media(max-width: 600px){
+  .navbar-floating {
+    flex-direction: column;      /* عمودي */
+    gap: 10px;
+    width: 90%;
+  }
+}

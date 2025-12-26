@@ -1,0 +1,389 @@
+:root {
+    --lavender: #cdbbff;          /* لون بنفسجي فاتح */
+    --baby-blue: #9fd3ff;         /* أزرق فاتح */
+    --primary: #7d6cff;           /* اللون الرئيسي */
+    --secondary: #5da1ff;         /* لون ثانوي */
+    --accent: #ff9f9f;            /* لون مميز للتأكيد */
+    --dark: #3a2f7a;              /* لون داكن للنص */
+    --radius: 25px;                /* نصف قطر الحواف */
+    --transition: all 0.35s ease; /* تأثير حركة عام */
+    --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* الخط الافتراضي */
+}
+
+/* ===== Global ===== */
+* {
+    box-sizing: border-box;        /* نخلي كل الحجوم محسوبة */
+    margin: 0;                     /* نحيد الهوامش الافتراضية */
+    padding: 0;                    /* نحيد المسافات الافتراضية */
+    font-family: "Cairo", sans-serif; /* الخط الافتراضي */
+}
+
+body {
+    background: white;             /* خلفية الصفحة بيضاء */
+    color: var(--dark);            /* لون النص داكن */
+    padding-top: 120px;            /* مسافة فوق عشان navbar */
+    overflow-x: hidden;            /* نخلي الصفحة ما تعملش scroll أفقي */
+}
+
+/* ===== NAVBAR ===== */
+.navbar-floating {
+    position: fixed;               /* نخلي navbar ثابت */
+    top: 20px;                     /* مسافة من فوق */
+    left: 50%;                     /* توسيط أفقي */
+    transform: translateX(-50%);   /* تصحيح التوسيط */
+    display: flex;                 /* ترتيب العناصر جنب بعض */
+    justify-content: space-between; /* توزيع المسافات بينهم */
+    align-items: center;           /* توسيط عمودي */
+    padding: 15px 30px;            /* padding داخلية */
+    background: #cdbbffde;         /* خلفية navbar */
+    border-radius: var(--radius);  /* تدوير الحواف */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* ظل خفيف */
+    z-index: 1000;                 /* نخلي navbar فوق كل العناصر */
+    width: 90%;                     /* عرض navbar */
+    max-width: 1100px;              /* أقصى عرض */
+    min-height: 70px;               /* ارتفاع مرن */
+    transition: all 0.3s ease;      /* تأثير حركة سلس */
+    direction: rtl;                 /* ترتيب من اليمين لليسار */
+}
+
+.nav-left {
+    display: flex;                 /* ترتيب العناصر جنب بعض */
+    align-items: center;           /* توسيط عمودي */
+    gap: 12px;                     /* مسافة بينهم */
+}
+
+.nav-left img {
+    width: 55px;                   /* حجم اللوجو */
+}
+
+.site-name {
+    font-family: 'Lobster', cursive; /* خط اسم الموقع */
+    font-size: 30px;               /* حجم الخط */
+    font-weight: 400;              /* سمك الخط */
+    letter-spacing: 1px;           /* مسافة بين الحروف */
+    color: var(--dark);            /* لون الخط */
+}
+
+.nav-right {
+    display: flex;                 /* ترتيب روابط navbar جنب بعض */
+    align-items: center;           /* توسيط عمودي */
+    gap: 25px;                     /* مسافة بينهم */
+}
+
+.nav-right a {
+    text-decoration: none;         /* إزالة الخط تحت الرابط */
+    font-size: 20px;               /* حجم الخط */
+    color: var(--dark);            /* لون الرابط */
+    transition: 0.3s;              /* تأثير حركة سلس */
+    font-weight: bolder;           /* سمك الخط */
+}
+
+.nav-right a:hover {
+    color: var(--primary);         /* لون الرابط عند المرور */
+}
+
+/* ===== Container ===== */
+.container {
+    width: 50%;                     /* عرض المحتوى */
+    max-width: 1000px;              /* أقصى عرض */
+    /*margin: auto;*/               /* نلغي التوسيط */
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    display: flex;                 /* ترتيب النص والصورة جنب بعض */
+    gap: 40px;                     /* مسافة بينهم */
+    align-items: center;           /* توسيط عمودي */
+    justify-content: space-between; /* توزيع المساحة */
+    padding: 65px 50px;            /* padding داخلي */
+    background: linear-gradient(135deg, var(--lavender), var(--baby-blue)); /* خلفية متدرجة */
+    border-radius: var(--radius);  /* تدوير الحواف */
+    margin: 60px 50px;             /* مسافة خارجية */
+    box-shadow: 0 8px 20px #cdbbff; /* ظل */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* تأثير حركة */
+}
+
+.hero:hover {
+    transform: perspective(800px) rotateY(2deg); /* ميلان خفيف عند المرور */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);  /* زيادة الظل */
+}
+
+.hero-text h1 {
+    font-family: 'Lobster', cursive; /* خط العنوان */
+    font-size: 50px;                /* حجم كبير */
+    color: var(--dark);             /* لون النص */
+}
+
+.hero-text h2 {
+    font-size: 30px;               /* حجم العنوان الفرعي */
+    margin: 15px 0;                /* مسافة فوق وتحت */
+    color: white;                  /* لون النص أبيض */
+}
+
+.hero-text p {
+    font-size: 18px;               /* حجم الفقرة */
+    line-height: 1.7;              /* تباعد الأسطر */
+    color: white;                  /* لون النص أبيض */
+}
+
+.btn-primary {
+    padding: 12px 25px;            /* مسافة داخلية للزر */
+    background: var(--primary);    /* لون الخلفية */
+    color: white;                  /* لون النص */
+    border: none;                  /* إزالة حدود */
+    border-radius: var(--radius);  /* تدوير الحواف */
+    cursor: pointer;               /* شكل المؤشر */
+    margin-top: 15px;              /* مسافة فوق */
+    transition: all 0.35s ease;    /* تأثير حركة سلس */
+}
+
+.btn-primary:hover {
+    background: var(--secondary);  /* تغيير لون الخلفية */
+    transform: scale(1.05);        /* تكبير صغير عند المرور */
+}
+
+.hero-image img {
+    width: 80%;                    /* عرض الصورة */
+    max-width: 520px;              /* أقصى عرض */
+    border-radius: var(--radius);  /* تدوير الحواف */
+    object-fit: cover;             /* الصورة تملا الحاوية */
+    animation: float 4s ease-in-out infinite; /* حركة عائمة */
+    box-shadow: 0 8px 20px #4c4561; /* ظل */
+}
+
+/* ===== Platform Section ===== */
+.platform {
+    padding: 60px 50px;            /* padding داخلي */
+    background: #f5f0ff;           /* خلفية */
+    border-radius: var(--radius);  /* تدوير الحواف */
+    margin: 60px 50px;             /* مسافة خارجية */
+    box-shadow: 0 8px 20px #4c4561; /* ظل */
+}
+
+.platform h2 {
+    text-align: center;            /* توسيط العنوان */
+    margin-bottom: 40px;           /* مسافة تحت */
+    font-size: 32px;               /* حجم الخط */
+    color: var(--dark);            /* لون النص */
+}
+
+.platform-content {
+    display: flex;                 /* ترتيب المحتوى */
+    align-items: center;           /* توسيط عمودي */
+    gap: 40px;                     /* مسافة */
+    flex-wrap: wrap;               /* يلتف لو ضاق */
+    justify-content: center;       /* توسيط أفقي */
+}
+
+.platform-image img {
+    width: 420px;                  /* عرض الصورة */
+    border-radius: var(--radius);  /* تدوير الحواف */
+    animation: float 4s ease-in-out infinite; /* حركة عائمة */
+    margin-right: 180px;           /* مسافة يمين */
+    box-shadow: 0 8px 20px #4c4561; /* ظل */
+}
+
+.platform-text {
+    max-width: 500px;              /* أقصى عرض */
+    line-height: 1.7;              /* تباعد الأسطر */
+    color: var(--dark);            /* لون النص */
+}
+
+.platform-text p {
+    direction: rtl;                /* من اليمين لليسار */
+    font-size: 21px;               /* حجم الخط */
+}
+
+.platform-text h1{
+    direction: rtl;                /* من اليمين لليسار */
+}
+
+/* ===== Float animation ===== */
+@keyframes float {
+    0%, 100% { transform: translateY(0); } /* وضع البداية والنهاية */
+    50% { transform: translateY(-15px); }  /* يطلع لفوق نصف الطريق */
+}
+
+/* ===== FAQ Section ===== */
+.faq {
+    padding: 60px 50px;            /* padding داخلي */
+    background: #cdbbff;           /* خلفية بنفسجية */
+    border-radius: var(--radius);  /* تدوير الحواف */
+    margin: 60px 50px;             /* مسافة خارجية */
+    box-shadow: 0 8px 20px #8f86a8; /* ظل */
+}
+
+.faq h2 {
+    text-align: center;            /* توسيط العنوان */
+    margin-bottom: 40px;           /* مسافة تحت */
+    font-size: 32px;               /* حجم الخط */
+    color: var(--dark);            /* لون النص */
+}
+
+.faq-container {
+    display: flex;                 /* ترتيب العناصر */
+    flex-direction: column;        /* عناصر فوق بعض */
+    gap: 15px;                     /* مسافة بينهم */
+}
+
+.faq-item {
+    background: white;             /* خلفية */
+    padding: 20px;                 /* padding داخلي */
+    border-radius: var(--radius);  /* تدوير الحواف */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* ظل */
+    cursor: pointer;               /* شكل المؤشر */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* حركة سلسة */
+    direction: rtl;                /* من اليمين لليسار */
+}
+
+.faq-item:hover {
+    transform: translateY(-5px) scale(1.05); /* يطلع ويكبر شوي */
+    box-shadow: 0 10px 25px rgba(125,108,255,0.25); /* ظل أقوى */
+    background: rgb(238, 212, 212); /* تغيير لون الخلفية */
+}
+
+/* ===== Partners Section ===== */
+.partners {
+    padding: 60px 50px;            /* padding داخلي */
+    text-align: center;            /* توسيط النص */
+    background: #f8f8f8;           /* خلفية */
+    margin: 60px auto;             /* مسافة خارجية */
+    max-width: 1000px;             /* أقصى عرض */
+}
+
+.partners-logos img {
+    margin: 0 20px;               /* مسافة جانبية */
+    width: 130px;                 /* عرض اللوجو */
+    transition: transform 0.3s ease; /* حركة سلسة */
+    border-radius: 5px;           /* تدوير الحواف */
+}
+
+.partners-logos img:hover {
+    transform: scale(1.3);        /* تكبير عند المرور */
+}
+
+/* ===== Footer ===== */
+footer {
+    background: #9c92b6d7;        /* خلفية */
+    color:  #3a2f7a;             /* لون النص */
+    text-align: center;           /* توسيط المحتوى */
+    padding: 30px 20px;           /* padding داخلي */
+    display: flex;                /* ترتيب العناصر */
+    flex-direction: column;       /* عناصر فوق بعض */
+    align-items: center;          /* توسيط عمودي */
+    gap: 15px;                    /* مسافة بينهم */
+    border-radius: 5px 5px 0px 0px; /* تدوير الحواف العليا */
+    font-weight: bolder;          /* سمك الخط */
+}
+
+footer p {
+    font-size: 20px;              /* حجم النص */
+    opacity: 0.9;                 /* شفاف قليل */
+}
+
+footer .socials {
+    display: flex;                /* ترتيب أيقونات */
+    gap: 20px;                    /* مسافة بينهم */
+}
+
+footer .socials a {
+    width: 45px;                  /* حجم الأيقونة */
+    height: 45px;
+    background: rgba(255,255,255,0.15); /* خلفية شفافة */
+    border-radius: 50%;           /* شكل دائرة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3a2f7a;               /* لون الأيقونة */
+    font-size: 18px;
+    transition: transform 0.35s ease, background 0.35s ease; /* حركة سلسة */
+}
+
+footer .socials a:hover {
+    transform: translateY(-6px) scale(1.1); /* يطلع ويكبر */
+    background: white;            /* تغيير الخلفية */
+    color: var(--primary);        /* تغيير اللون */
+}
+
+/* ===== Responsive ===== */
+
+/* --- Medium devices (<=768px) --- */
+@media (max-width: 768px) {
+    .navbar-floating {
+        left: 5%;                 /* تعديل المسافة من اليسار */
+        transform: none;          /* نلغي التوسيط */
+        width: 90%;               /* عرض جديد */
+        padding: 12px 20px;       /* padding أصغر */
+        height: auto;             /* ارتفاع تلقائي */
+    }
+
+    .nav-left img { width: 45px; }        /* تصغير اللوجو */
+    .site-name { font-size: 26px; }       /* تصغير الاسم */
+    .nav-right a { font-size: 16px; gap: 15px; } /* تصغير الروابط */
+}
+
+/* --- Tablet --- */
+@media (max-width: 1024px) {
+    .hero-text h1 { font-size: 38px; }    /* تصغير العنوان */
+    .hero-text h2 { font-size: 24px; }    /* تصغير العنوان الفرعي */
+    .hero-image img { width: 80%; }       /* تصغير الصورة */
+
+    .platform-content { flex-direction: column; gap: 20px; } /* ترتيب عمودي */
+    .platform-image img { width: 80%; margin-right: 0; }    /* تعديل الصورة */
+    .platform-text p { font-size: 18px; }                   /* تصغير النص */
+
+    .faq h2 { font-size: 26px; }          /* تصغير عنوان FAQ */
+    .partners-logos img { width: 100px; } /* تصغير اللوجو */
+}
+
+/* --- Large screens --- */
+@media (min-width: 1200px) {
+    .hero-text h1 { font-size: 60px; }    /* تكبير العنوان */
+    .hero-text h2 { font-size: 36px; }    /* تكبير العنوان الفرعي */
+    .hero-image img { width: 600px; }     /* تكبير الصورة */
+    .platform-image img { width: 500px; } /* تكبير صورة البلاتفورم */
+    .platform-text p { font-size: 22px; } /* تكبير النص */
+    .faq h2 { font-size: 36px; }          /* تكبير عنوان FAQ */
+}
+
+/* ===== NAVBAR MOBILE FIX (FINAL) ===== */
+@media (max-width: 480px) {
+
+  body {
+    padding-top: 130px;               /* زيادة المسافة فوق */
+  }
+
+  .navbar-floating {
+    left: 10px;                        /* مسافة من اليسار */
+    right: 10px;                       /* مسافة من اليمين */
+    transform: none;                   /* إلغاء التوسيط */
+    width: auto;                        /* عرض تلقائي */
+    flex-wrap: wrap;                   /* الالتفاف */
+    gap: 8px;                          /* مسافة بين العناصر */
+    border-radius: 14px;               /* تدوير الحواف */
+  }
+
+  .nav-left {
+    width: 100%;                        /* توسيع اليسار */
+    justify-content: center;            /* توسيط العناصر */
+  }
+
+  .nav-right {
+    width: 100%;                        /* توسيع اليمين */
+    justify-content: center;            /* توسيط */
+    flex-wrap: wrap;                     /* الالتفاف */
+    gap: 12px;                          /* مسافة بين الروابط */
+  }
+
+  .nav-right a {
+    font-size: 13px;                    /* تصغير الروابط */
+  }
+
+  .nav-left img {
+    width: 32px;                        /* تصغير اللوجو */
+  }
+
+  .site-name {
+    font-size: 18px;                     /* تصغير اسم الموقع */
+  }
+}

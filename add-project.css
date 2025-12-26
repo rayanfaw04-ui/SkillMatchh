@@ -1,0 +1,221 @@
+:root {
+      --primary: #7b6cff;           /* اللون الرئيسي */
+  --blue: #4d7cff;                  /* أزرق */
+  --purple: #8a6cff;                /* بنفسجي */
+  --green: #28a745;                 /* أخضر */
+  --bg: #f5f7ff;                    /* خلفية عامة */
+  --text: #1f2937;                  /* لون النص */
+  --muted: #6b7280;                 /* لون نص خافت */
+  --dark: #3a2f7a;                  /* لون داكن */
+      --radius: 25px;               /* نصف قطر الحواف */
+}
+
+* {
+  box-sizing: border-box;            /* نحسب الحجوم مع البادينغ والحدود */
+  font-family: "Cairo", sans-serif; /* الخط الافتراضي */
+}
+
+body {
+  margin: 0;                         /* نحيد الهوامش الافتراضية */
+  background: var(--bg);             /* خلفية الجسم */
+  color: var(--text);                /* لون النص */
+  padding-top: 130px;                /* مسافة فوق الصفحة لل navbar */
+}
+
+/* NAVBAR */
+.navbar-floating {
+    position: fixed;                 /* navbar ثابت */
+    top: 30px;                        /* مسافة من فوق */
+    left: 50%;                        /* توسيط أفقي */
+    transform: translateX(-50%);      /* لتصحيح التوسيط */
+    display: flex;                    /* ترتيب العناصر جنب بعض */
+    justify-content: space-between;   /* توزيع المسافات بينهم */
+    align-items: center;              /* توسيط عمودي */
+    padding: 15px 50px;               /* padding داخلي */
+    background:  #cdbbffde;           /* لون الخلفية مع شفافية */
+    border-radius: var(--radius);     /* تدوير الحواف */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* ظل خفيف */
+    z-index: 1000;                     /* نخلي navbar فوق كل العناصر */
+    width: 80%;                        /* عرض navbar */
+    max-width: 1500px;                 /* أقصى عرض */
+    height: 100px;                      /* ارتفاع navbar */
+    transition: all 0.3s ease;         /* تأثير الحركة سلس */
+    direction: rtl;                     /* ترتيب من اليمين لليسار */
+}
+
+.nav-left {
+    display: flex;                     /* ترتيب العناصر جنب بعض */
+    align-items: center;               /* توسيط عمودي */
+    gap: 12px;                         /* مسافة بينهم */
+}
+
+.nav-left img {
+    width: 55px;                       /* حجم اللوجو */
+}
+
+.site-name {
+    font-family: 'Lobster', cursive;  /* خط اسم الموقع */
+    font-size: 30px;                   /* حجم الخط */
+    font-weight: 400;                  /* سمك الخط */
+    letter-spacing: 1px;               /* مسافة بين الحروف */
+    color: var(--dark);                /* لون النص */
+}
+
+.nav-right {
+    display: flex;                     /* ترتيب روابط navbar جنب بعض */
+    align-items: center;               /* توسيط عمودي */
+    gap: 25px;                         /* مسافة بينهم */
+}
+
+.nav-right a {
+    text-decoration: none;             /* إزالة الخط تحت الرابط */
+    font-size: 20px;                   /* حجم الخط */
+    color: var(--dark);                /* لون الرابط */
+    transition: 0.3s;                  /* تأثير حركة سلس */
+    font-weight: bolder;               /* سمك الخط */
+}
+
+.nav-right a:hover {
+    color: var(--primary);             /* لون الرابط عند المرور */
+}
+
+/* CONTAINER */
+.container {
+  width: 90%;                          /* عرض المحتوى */
+  max-width: 720px;                    /* أقصى عرض */
+  margin: auto;                        /* توسيط المحتوى */
+  background: white;                   /* خلفية بيضاء */
+  padding: 50px 40px;                  /* padding داخلي */
+  border-radius: var(--radius);        /* تدوير الحواف */
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12); /* ظل خفيف */
+  margin-top: 50px;                    /* مسافة فوق المحتوى */
+}
+
+h1 {
+  text-align: center;                  /* توسيط العنوان */
+  color: var(--purple);                /* لون العنوان بنفسجي */
+  font-size: 2.3rem;                   /* حجم الخط */
+}
+
+.subtitle {
+  text-align: center;                  /* توسيط النص الفرعي */
+  color: var(--muted);                 /* لون خافت */
+  margin-bottom: 30px;                 /* مسافة تحت */
+}
+
+/* FORM */
+form {
+  display: flex;                       /* ترتيب عناصر الفورم عمودياً */
+  flex-direction: column;              /* عمودي */
+  gap: 20px;                           /* مسافة بينهم */
+}
+
+label {
+  font-weight: 600;                     /* سمك الخط */
+  margin-bottom: 6px;                   /* مسافة تحت */
+  display: block;                        /* نحولها بلوك */
+}
+
+input,
+select,
+textarea {
+  width: 100%;                          /* العرض كامل */
+  padding: 14px;                        /* padding داخلي */
+  border-radius: 12px;                  /* تدوير الحواف */
+  border: 1px solid #ddd;               /* حدود خفيفة */
+  font-size: 1rem;                       /* حجم الخط */
+  transition: 0.3s;                      /* حركة سلسة */
+}
+
+textarea {
+  min-height: 120px;                     /* ارتفاع أدنى */
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;                         /* إزالة outline */
+  border-color: var(--blue);            /* تغيير لون الحدود عند التركيز */
+  box-shadow: 0 0 8px rgba(77,124,255,0.4); /* ظل عند التركيز */
+}
+
+.form-row {
+  display: flex;                         /* ترتيب العناصر جنب بعض */
+  gap: 15px;                             /* مسافة بينهم */
+  flex-wrap: wrap;                       /* يلتف لو ضاق */
+}
+
+.form-row > div {
+  flex: 1;                               /* ياخذ مساحة متساوية */
+  min-width: 160px;                       /* عرض أدنى */
+}
+
+button {
+  margin-top: 10px;                       /* مسافة فوق الزر */
+  padding: 15px;                          /* padding داخلي */
+  border: none;                           /* إزالة الحدود */
+  border-radius: 30px;                    /* تدوير الحواف */
+  background: linear-gradient(135deg, var(--blue), var(--purple)); /* خلفية متدرجة */
+  color: white;                           /* لون النص */
+  font-size: 1.1rem;                      /* حجم الخط */
+  font-weight: 700;                        /* سمك الخط */
+  cursor: pointer;                        /* شكل المؤشر */
+  transition: 0.3s;                        /* حركة سلسة */
+}
+
+button:hover {
+  transform: translateY(-4px) scale(1.04);  /* تأثير رفع وتكبير */
+  box-shadow: 0 12px 25px rgba(138,108,255,0.4); /* ظل عند المرور */
+}
+
+.success-msg {
+  display: none;                           /* مخفي افتراضياً */
+  text-align: center;                      /* توسيط النص */
+  color: var(--green);                     /* لون النجاح أخضر */
+  font-weight: 600;                         /* سمك الخط */
+  margin-bottom: 15px;                      /* مسافة تحت */
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .project-card, .profile-header {
+    padding: 15px;                          /* تقليل padding */
+    gap: 15px;                              /* مسافة أقل */
+  }
+
+  .project-info h3, .profile-info h2 {
+    font-size: 1.3rem;                      /* تصغير العناوين */
+  }
+
+  .project-info p, .profile-info p {
+    font-size: 0.9rem;                      /* تصغير النصوص */
+  }                          
+
+  .details-btn, .cv-btn, button {
+    padding: 8px 18px;                       /* تصغير الزر */
+    font-size: 0.85rem;                       /* تصغير حجم الخط */
+  }
+
+  .project-image {
+    width: 100px;                              /* عرض الصورة */
+    height: 100px;                             /* ارتفاع الصورة */
+  }
+
+  .floating-add-btn {
+    left: auto;                               /* إلغاء تحديد من اليسار */
+    right: 15px;                              /* مسافة من اليمين */
+    bottom: 15px;                             /* مسافة من الأسفل */
+    padding: 18px;                             /* padding داخلي */
+  }
+
+  .navbar-floating {
+    flex-direction: column;                    /* ترتيب عمودي */
+    height: auto;                              /* ارتفاع تلقائي */
+    padding: 15px 20px;                         /* padding أصغر */
+  }                           
+
+  .nav-right {
+    flex-direction: column;                     /* ترتيب عمودي */
+    gap: 10px;                                 /* مسافة أقل */
+  }
+}
